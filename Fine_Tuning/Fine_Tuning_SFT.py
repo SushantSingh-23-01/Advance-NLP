@@ -8,7 +8,7 @@ from trl import SFTTrainer
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 dataset = load_dataset("squad")
-model_id="EleutherAI/gpt-neo-125M"        ##Model
+model_id="EleutherAI/gpt-neo-125M"        # Use smaller models with this script
 
 def preprocess(dataset):
     dataset['context'] = '<|system|>\n' + dataset['question'] + '\n<|user|>\n' + dataset['context']
